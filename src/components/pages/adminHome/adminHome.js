@@ -3,7 +3,7 @@ import Header from "../header/header";
 import getTournaments from "../../../components/services/tournaments";
 import TournamentsList from "./tournamentsList";
 import fetchTournaments from "../../services/tournaments";
-import Createtournament from "../../services/createTournament";
+import createTournament from "../../services/createTournament";
 // import fetchTournaments from "./dummyData";
 import { useState, useEffect } from "react";
 
@@ -18,25 +18,42 @@ const AdminHome = () => {
     getData();
   }, []);
 
-  const [tournamentName, setTournamentName] = useState([]);
-
-  const handleChangeTournamentName = (event) => {
-    setTournamentName(event.target.value);
-
-    console.log("Tournament name is:", tournamentName);
-    console.log(typeof tournamentName);
+  const [tournamentName, setTournamentName] = useState("");
+  const handleChangeTournamentName = ({ target }) => {
+    setTournamentName(target.value);
   };
+
+  // const [tournamentName, setTournamentName] = useState("");
+  // const handleChangeTournamentNameDelete = ({ target }) => {
+  //   setTournamentName(target.value);
+  // };
 
   return (
     <div>
       <Header></Header>
       <div>
         <div>
-          <button onClick={Createtournament(tournamentName)}>
+          <button
+            onClick={() => {
+              createTournament(tournamentName);
+            }}
+          >
             Create tournament
           </button>
+          <input
+            placeholder="Enter tournament name"
+            onChange={handleChangeTournamentName}
+            value={tournamentName}
+          ></input>
         </div>
         <div>
+          <button
+            onClick={() => {
+              createTournament(tournamentName);
+            }}
+          >
+            Delete tournament
+          </button>
           <input
             placeholder="Enter tournament name"
             onChange={handleChangeTournamentName}
