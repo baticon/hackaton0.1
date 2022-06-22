@@ -3,11 +3,9 @@ import Header from "../header/header";
 import getTournaments from "../../../components/services/tournaments";
 import TournamentsList from "./tournamentsList";
 import fetchTournaments from "../../services/tournaments";
+import Createtournament from "../../services/createTournament";
 // import fetchTournaments from "./dummyData";
 import { useState, useEffect } from "react";
-
-// const data = getTournament2();
-// console.log(data);
 
 const AdminHome = () => {
   const [data, setData] = useState([]);
@@ -20,11 +18,31 @@ const AdminHome = () => {
     getData();
   }, []);
 
+  const [tournamentName, setTournamentName] = useState([]);
+
+  const handleChangeTournamentName = (event) => {
+    setTournamentName(event.target.value);
+
+    console.log("Tournament name is:", tournamentName);
+    console.log(typeof tournamentName);
+  };
+
   return (
     <div>
       <Header></Header>
       <div>
-        <button>Create tournament</button>
+        <div>
+          <button onClick={Createtournament(tournamentName)}>
+            Create tournament
+          </button>
+        </div>
+        <div>
+          <input
+            placeholder="Enter tournament name"
+            onChange={handleChangeTournamentName}
+            value={tournamentName}
+          ></input>
+        </div>
         <button>Start tournament</button>
         <button>Finish tournament</button>
         {/* <button onClick={getTournament2()}>Show tournaments</button> */}
