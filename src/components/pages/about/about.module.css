@@ -1,0 +1,12 @@
+.aboutBody {
+  display: grid;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+}
+
+h2 {
+  color: white;
+}

@@ -1,0 +1,68 @@
+/*****************************
+*	horizontal news ticker
+https://codehasbug.com/css/create-3-types-horizontal-vertical-news-ticker-html-css/
+******************************/
+
+.tickerwrapperh {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #21212b;
+}
+
+.heading {
+  background-color: #21212b;
+  color: #fff;
+  padding: 5px 10px;
+  flex: 0 0 auto;
+  z-index: 1000;
+}
+.heading:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-left: 20px solid #21212b;
+  border-top: 17px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.newstickerh {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  padding-left: 90%;
+  z-index: 999;
+
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: tich;
+  animation-duration: 40s;
+}
+.newstickerh:hover {
+  animation-play-state: paused;
+}
+
+.newstickerhli {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.newstickerhli a {
+  color: #212529;
+  font-weight: bold;
+}
+
+@keyframes tich {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
