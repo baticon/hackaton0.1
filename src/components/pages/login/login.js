@@ -48,7 +48,11 @@ const Login = () => {
         <button id="loginButton" className={style.button}>
           Login
         </button>
-        <button id="loginForgotButton" className={style.button}>
+        <button
+          onClick={console.log("test")}
+          id="loginForgotButton"
+          className={style.button}
+        >
           Forgot password
         </button>
         <Link className={style.noAccount} to="/registration">

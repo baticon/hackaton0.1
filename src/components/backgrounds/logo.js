@@ -3,10 +3,10 @@ import style from "../styles/movingLogo.module.css";
 const Logo = () => {
   return (
     <div className={style.fatherDiv}>
-      <div class={style.cat}>
+      <div className={style.cat}>
         <div>
           JUSAN
-          <div class={style.dog}>
+          <div className={style.dog}>
             <div>SINGULARITY</div>
           </div>
         </div>

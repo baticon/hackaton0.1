@@ -52,7 +52,7 @@ const Registration = () => {
         <input
           type="text"
           id="email"
-          class="input-field"
+          className="input-field"
           placeholder="email"
           onChange={handleChangeEmail}
           value={inputEmail}
@@ -130,7 +130,7 @@ const Registration = () => {
           title="Пароль — от 8 до 30 символов, обязательно хотя бы один спецсимвол и цифра."
         />
 
-        <button id="regButton" class="button" type="submit">
+        <button id="regButton" className="button" type="submit">
           Register
         </button>
         <span></span>

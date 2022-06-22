@@ -1,42 +1,42 @@
 const About2 = () => {
   return (
     <div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <h1 style={{ fontSize: "25px" }} class="text-left">
+      <div className="w3-row">
+        <div className="w3-half">
+          <h1 style={{ fontSize: "25px" }} className="text-left">
             {" "}
             SENIOR INTERNS
           </h1>
         </div>
-        <div class="w3-half">
+        <div className="w3-half">
           <h2 style={{ fontSize: "20px" }}>
             About us<br></br>
           </h2>
         </div>
       </div>
-      <div class="w3-row">
-        <div class="w3-quarter">
+      <div className="w3-row">
+        <div className="w3-quarter">
           <br></br>
-          <div class="menu">
-            <nav class="navbar">
-              <ul class="navbar-nav list-group">
-                <li class="nav-item text-center list-group-item">
-                  <a class="nav-link" href="#">
+          <div className="menu">
+            <nav className="navbar">
+              <ul className="navbar-nav list-group">
+                <li className="nav-item text-center list-group-item">
+                  <a className="nav-link" href="#">
                     Home
                   </a>
                 </li>
-                <li class="nav-item text-center list-group-item">
-                  <a class="nav-link" href="#">
+                <li className="nav-item text-center list-group-item">
+                  <a className="nav-link" href="#">
                     Login
                   </a>
                 </li>
-                <li class="nav-item text-center list-group-item">
-                  <a class="nav-link" href="#">
+                <li className="nav-item text-center list-group-item">
+                  <a className="nav-link" href="#">
                     Registration
                   </a>
                 </li>
-                <li class="nav-item text-center list-group-item">
-                  <a class="nav-link" href="#">
+                <li className="nav-item text-center list-group-item">
+                  <a className="nav-link" href="#">
                     About
                   </a>
                 </li>
