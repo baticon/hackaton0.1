@@ -6,6 +6,7 @@ import Snow from "../src/components/backgrounds/snow";
 import AdminHome from "../src/components/pages/adminHome/adminHome";
 import LoginParticipants from "../src/components/pages/loginParticipants/loginParticipants";
 import About from "./components/pages/about/about";
+import ScoreSubmit from "../src/components/pages/scoreSubmit/scoreSubmit";
 
 import "./style.css";
 
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/about" element={<About />} />,
                 <Route path={"/home"} element={<Home />} />,
                 <Route path="/admin" element={<AdminHome />} />,
+                <Route path="/scoresubmit" element={<ScoreSubmit />} />,
               ]
             : null}
         </Routes>
