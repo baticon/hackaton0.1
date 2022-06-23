@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchTournaments from "../../services/tournaments";
 import TournamentsList from "../adminHome/tournamentsList";
+import updateMatch from "../../services/updateMatch";
 
 function ScoreSubmit() {
   const [data, setData] = useState([]);
@@ -23,7 +24,18 @@ function ScoreSubmit() {
   const [inputTournamentID, setInputTournamentID] = useState("");
   const handleChangeTournamentID = ({ target }) => {
     setInputTournamentID(target.value);
+    console.log("TournamentID value is:", target.value);
+  };
 
+  const [inputPlayerWinner, setInputPlayerWinner] = useState();
+  const handleChangePlayerWinner = ({ target }) => {
+    setInputPlayerWinner(target.value);
+    console.log("TournamentID value is:", target.value);
+  };
+
+  const [inputPlayerLooser, setInputPlayerLooser] = useState();
+  const handleChangePlayerLooser = ({ target }) => {
+    setInputPlayerLooser(target.value);
     console.log("TournamentID value is:", target.value);
   };
 
@@ -38,22 +50,37 @@ function ScoreSubmit() {
       <div>
         <label style={{ color: "white" }}>Enter tournament ID</label>
         <input
+          style={{ color: "white" }}
           type="text"
           placeholder="tournament ID"
           onChange={handleChangeTournamentID}
-          value={inputTournamentID}
         />
       </div>
       <div>
         <label style={{ color: "white" }}>Enter WINNER player ID</label>
-        <input placeholder="round number"></input>
+        <input
+          style={{ color: "white" }}
+          placeholder="Winner ID"
+          onChange={handleChangePlayerWinner}
+        ></input>
       </div>
       <div>
         <label style={{ color: "white" }}>Enter LOSER player ID</label>
-        <input placeholder="winner ID"></input>
+        <input
+          style={{ color: "white" }}
+          placeholder="Looser ID"
+          onChange={handleChangePlayerLooser}
+        ></input>
       </div>
 
-      <button>Submit</button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          updateMatch(inputTournamentID, inputPlayerWinner, inputPlayerLooser);
+        }}
+      >
+        Submit
+      </button>
     </form>
   );
 }
