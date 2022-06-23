@@ -210,6 +210,23 @@ const AdminHome = () => {
               onChange={handleChangeTournamentStart}
               value={tournamentStart}
             ></input>
+
+            {/*  //TODO CONTINUE HERE*/}
+            <button
+              className={style.button}
+              onClick={() => {
+                startTournament(tournamentStart);
+              }}
+            >
+              Start tournament
+            </button>
+            <label style={{ color: "white" }}>Tournament ID</label>
+            <input
+              className={style.input}
+              placeholder="Enter tournament ID"
+              onChange={handleChangeTournamentStart}
+              value={tournamentStart}
+            ></input>
           </div>
           <div className={style.operationContainer}>
             <button

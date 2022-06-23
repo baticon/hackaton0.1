@@ -20,7 +20,10 @@ const About2 = () => {
       <div className="w3-row">
         <div className="w3-quarter">
           <br></br>
-          <div className="menu">
+          <div
+            className="menu"
+            style={{ paddingLeft: "50px", paddingTop: "20px" }}
+          >
             <div style={{ display: "grid" }}>
               <b style={{ color: "white" }}>
                 Our team, formerly know as the HIGH FIVE consists of 5 people
