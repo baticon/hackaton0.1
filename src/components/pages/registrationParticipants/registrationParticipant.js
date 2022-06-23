@@ -25,7 +25,7 @@ const RegistrationParticipants = () => {
   };
 
   return (
-      <div className={style.body}>
+      <div style={{overflowY:"scroll"}}>
 
         <div className="background">
           <div className="shape"></div>
