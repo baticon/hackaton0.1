@@ -1,4 +1,4 @@
-const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
+const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
 const tournamentId = "11325077";
 
 let url = `https://api.challonge.com/v1/tournaments/${tournamentId}?api_key=${password}`;

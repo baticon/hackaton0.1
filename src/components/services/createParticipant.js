@@ -10,7 +10,7 @@ function createParticipant(tournamentID, participantName, participantEmail) {
 }
 
 async function PostCreateParticipant(tournamentID, participant) {
-    const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
+    const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
     let url = `https://api.challonge.com/v1/tournaments/${tournamentID}/participants.json`;
     console.log(tournamentID, participant);
     try {
@@ -21,7 +21,7 @@ async function PostCreateParticipant(tournamentID, participant) {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({api_key: password, participant: participant }),
+            body: JSON.stringify({api_key: password, participant: participant}),
         })
             .then((response) => response.json())
             .then((json) => console.log(json));
