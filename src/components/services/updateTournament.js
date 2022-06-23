@@ -1,3 +1,5 @@
+import key from "../pages/adminHome/key";
+
 function updateTournament(
   id,
   tournamentName,
@@ -5,7 +7,7 @@ function updateTournament(
   description,
   tournamentType
 ) {
-  const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
+  const password = key;
   const tournamentId = id;
 
   let url = `https://api.challonge.com/v1/tournaments/${tournamentId}?api_key=${password}`;

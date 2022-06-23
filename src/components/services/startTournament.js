@@ -1,3 +1,5 @@
+import key from "../pages/adminHome/key";
+
 function startTournament(tournamentId) {
   console.log("test from deleteTournament");
   console.log(tournamentId);
@@ -6,7 +8,7 @@ function startTournament(tournamentId) {
 }
 
 async function postStartTournament(id) {
-  const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
+  const password = key;
   const tournamentId = id;
 
   let url = `https://api.challonge.com/v1/tournaments/${tournamentId}/start?api_key=${password}`;

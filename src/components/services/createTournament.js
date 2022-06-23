@@ -1,3 +1,5 @@
+import key from "../pages/adminHome/key";
+
 function createTournament(tournamentName, gameName, description, roundType) {
   if (
     tournamentName.length > 0 &&
@@ -21,7 +23,7 @@ function createTournament(tournamentName, gameName, description, roundType) {
 }
 
 async function PostCreateTournament(tournament) {
-  const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
+  const password = key;
   try {
     await fetch("https://api.challonge.com/v1/tournaments.json", {
       method: "POST",
@@ -29,7 +31,7 @@ async function PostCreateTournament(tournament) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({api_key: password, tournament: tournament }),
+      body: JSON.stringify({ api_key: password, tournament: tournament }),
     });
   } catch (error) {
     console.log(error);
