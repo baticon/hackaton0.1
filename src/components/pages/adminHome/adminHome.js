@@ -7,6 +7,7 @@ import fetchTournaments from "../../services/tournaments";
 import createTournament from "../../services/createTournament";
 import deleteTournament from "../../services/deleteTournament";
 import startTournament from "../../services/startTournament";
+import updateTournament from "../../services/updateTournament";
 
 import { useState, useEffect } from "react";
 
@@ -53,10 +54,43 @@ const AdminHome = () => {
     console.log(tournamentStart);
   };
 
+  let singleTournament = "";
   const [tournamentUpdateID, setTournamentUpdateID] = useState("");
+  const [tournamentUpdateName, setTournamentUpdateName] = useState("");
+  const [tournamentUpdateGameName, setTournamentUpdateGameName] = useState("");
+  const [tournamentUpdateDescription, setTournamentUpdateDescription] =
+    useState("");
+
+  const [tournamentUpdateTournamentType, setTournamentUpdateTournamentType] =
+    useState("");
+
   const handleChangeTournamentUpdateID = ({ target }) => {
-    setTournamentUpdateID(target.value);
-    console.log(tournamentUpdateID);
+    const id = Number(target.value);
+    console.log("test from adminhome");
+    console.log(data);
+    const tournament = data.find(({ tournament }) => {
+      return tournament.id === id;
+    });
+    setTournamentUpdateID(tournament.tournament.id);
+    setTournamentUpdateName(tournament.tournament.name);
+    setTournamentUpdateGameName(tournament.tournament.game_name);
+    setTournamentUpdateDescription(tournament.tournament.description);
+    setTournamentUpdateTournamentType(tournament.tournament.tournament_type);
+    console.log("test");
+    console.log(tournament);
+  };
+
+  const handleChangeTournamentUpdateName = ({ target }) => {
+    setTournamentUpdateName(target.value);
+  };
+  const handleChangeTournamentUpdateGameName = ({ target }) => {
+    setTournamentUpdateGameName(target.value);
+  };
+  const handleChangeTournamentUpdateDescription = ({ target }) => {
+    setTournamentUpdateDescription(target.value);
+  };
+  const handleChangeTournamentUpdateTournamentType = ({ target }) => {
+    setTournamentUpdateTournamentType(target.value);
   };
 
   return (
@@ -144,15 +178,50 @@ const AdminHome = () => {
             value={tournamentStart}
           ></input>
         </div>
-        <div>
-          <button>Update tournament</button>
+        <div style={{ display: "flex" }}>
+          <button
+            onClick={() => {
+              updateTournament(
+                tournamentUpdateID,
+                tournamentUpdateName,
+                tournamentUpdateGameName,
+                tournamentUpdateDescription,
+                tournamentUpdateTournamentType
+              );
+            }}
+          >
+            Update tournament
+          </button>
           <input
             placeholder="Enter tournament ID"
             onChange={handleChangeTournamentUpdateID}
             value={tournamentUpdateID}
           ></input>
+          <input
+            onChange={handleChangeTournamentUpdateName}
+            value={tournamentUpdateName}
+          ></input>
+          <input
+            onChange={handleChangeTournamentUpdateGameName}
+            value={tournamentUpdateGameName}
+          ></input>
+          <input
+            onChange={handleChangeTournamentUpdateDescription}
+            value={tournamentUpdateDescription}
+          ></input>
+          <div>
+            <h4 style={{ color: "white" }}>{tournamentUpdateTournamentType}</h4>
+            <select onChange={handleChangeTournamentUpdateTournamentType}>
+              {" "}
+              {tournamentUpdateTournamentType}
+              <option value="">Please select type of round</option>
+              <option value="single elimination">Single elimination</option>
+              <option value="double elimination">Double elimination</option>
+              <option value="round robin">Round robin</option>
+              <option value="swiss">Swiss</option>
+            </select>
+          </div>
         </div>
-        {/* <button onClick={getTournament2()}>Show tournaments</button> */}
         <TournamentsList tournamentData={data}></TournamentsList>
       </div>
     </div>
