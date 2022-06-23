@@ -1,5 +1,4 @@
 import style from "./registration.module.css";
-import Logo from "../../backgrounds/logo";
 import { useState } from "react";
 
 const Registration = () => {
@@ -46,9 +45,13 @@ const Registration = () => {
   };
 
   return (
-    <div className={style.formPadding}>
-      <form id="registration-form" className={style.registerForm}>
-        <h2>Registration</h2>
+    <div className={style.body}>
+      <div className={style.background}>
+        <div className={style.shape}></div>
+        <div className={style.shape}></div>
+      </div>
+      <form id="registration-form" className={style.form_reg}>
+        <h3>Registration</h3>
         <input
           type="text"
           id="email"
@@ -135,7 +138,6 @@ const Registration = () => {
         </button>
         <span></span>
       </form>
-      <Logo />
     </div>
   );
 };

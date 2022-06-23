@@ -1,6 +1,9 @@
+import Header from "../header/header";
+
 const About2 = () => {
   return (
     <div>
+      <Header></Header>
       <div className="w3-row">
         <div className="w3-half">
           <h1 style={{ fontSize: "25px" }} className="text-left">
@@ -18,30 +21,6 @@ const About2 = () => {
         <div className="w3-quarter">
           <br></br>
           <div className="menu">
-            <nav className="navbar">
-              <ul className="navbar-nav list-group">
-                <li className="nav-item text-center list-group-item">
-                  <a className="nav-link" href="#">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item text-center list-group-item">
-                  <a className="nav-link" href="#">
-                    Login
-                  </a>
-                </li>
-                <li className="nav-item text-center list-group-item">
-                  <a className="nav-link" href="#">
-                    Registration
-                  </a>
-                </li>
-                <li className="nav-item text-center list-group-item">
-                  <a className="nav-link" href="#">
-                    About
-                  </a>
-                </li>
-              </ul>
-            </nav>
             <div style={{ display: "grid" }}>
               <b style={{ color: "white" }}>
                 Our team, formerly know as the HIGH FIVE consists of 5 people
