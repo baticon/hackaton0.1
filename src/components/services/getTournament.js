@@ -7,7 +7,7 @@
 // }
 
 async function getTournament(id) {
-  const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
+  const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
   const tournamentId = id;
 
   let url = `https://api.challonge.com/v1/tournaments/${tournamentId}?api_key=${password}`;
