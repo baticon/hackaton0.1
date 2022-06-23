@@ -8,8 +8,10 @@ import createTournament from "../../services/createTournament";
 import deleteTournament from "../../services/deleteTournament";
 import startTournament from "../../services/startTournament";
 import updateTournament from "../../services/updateTournament";
+import Map from "../map/map";
 
 import { useState, useEffect } from "react";
+// import SetMap from "../map/map";
 
 const AdminHome = () => {
   const [data, setData] = useState([]);
@@ -54,7 +56,6 @@ const AdminHome = () => {
     console.log(tournamentStart);
   };
 
-  let singleTournament = "";
   const [tournamentUpdateID, setTournamentUpdateID] = useState("");
   const [tournamentUpdateName, setTournamentUpdateName] = useState("");
   const [tournamentUpdateGameName, setTournamentUpdateGameName] = useState("");
@@ -92,6 +93,27 @@ const AdminHome = () => {
   const handleChangeTournamentUpdateTournamentType = ({ target }) => {
     setTournamentUpdateTournamentType(target.value);
   };
+
+  const [map, setMap] = useState();
+  const [url, setUrl] = useState("");
+
+  // function SetMap(urlPart) {
+  //   return (
+  //     <iframe
+  //       src={`http://challonge.com/${urlPart}/module`}
+  //       width="100%"
+  //       height="500"
+  //       frameborder="0"
+  //       scrolling="auto"
+  //       allowtransparency="true"
+  //     ></iframe>
+  //   );
+  // }
+
+  function handleMapClick(url) {
+    setUrl(url);
+    console.log(url);
+  }
 
   return (
     <div>
@@ -222,7 +244,18 @@ const AdminHome = () => {
             </select>
           </div>
         </div>
-        <TournamentsList tournamentData={data}></TournamentsList>
+        <TournamentsList
+          tournamentData={data}
+          handleMapClick={handleMapClick}
+        ></TournamentsList>
+        <iframe
+          src={`http://challonge.com/${url}/module`}
+          width="100%"
+          height="500"
+          frameborder="0"
+          scrolling="auto"
+          allowtransparency="true"
+        ></iframe>
       </div>
     </div>
   );
