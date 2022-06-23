@@ -1,0 +1,23 @@
+.header {
+  color: white;
+}
+
+.tournamentList {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 120px auto 80px;
+  column-gap: 10px;
+  row-gap: 15px;
+  color: white;
+}
+
+.individualTournament {
+  padding-left: 5px;
+  padding-top: 5px;
+  height: 100px;
+  border-radius: 15px;
+  background: #21212b;
+  border-color: #ea4335;
+  border-width: 5px;
+  border-style: inset;
+}
