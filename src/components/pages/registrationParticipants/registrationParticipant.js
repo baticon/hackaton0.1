@@ -36,7 +36,7 @@ const RegistrationParticipants = () => {
               placeholder="email"
               onChange={handleChangeEmail}
               value={inputEmail}
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              //pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               title="Email — стандартная проверка: латиница, может содержать спецсимволы и
           цифры, обязательно должна быть «собачка» (@) и точка после неё, но
           перед точкой обязательно должны быть буквы"
@@ -49,7 +49,7 @@ const RegistrationParticipants = () => {
               placeholder="Login"
               onChange={handleChangeLogin}
               value={inputLogin}
-              pattern="(?=.*[a-zA-Z-].*)[a-zA-Z0-9-_]+"
+            //  pattern="(?=.*[a-zA-Z-].*)[a-zA-Z0-9-_]+"
               title="Логин — от 3 до 15 символов, только латиница. Без пробелов, без
       спецсимволов, кроме нижнего подчеркивания и дефиса. Может содержать
       числа, но не полностью состоять из них."
@@ -62,7 +62,7 @@ const RegistrationParticipants = () => {
               placeholder="tournamentID"
               onChange={handleChangeTournamentID}
               value={inputTournamentID}
-              pattern="^[0-9]*$"
+             // pattern="^[0-9]*$"
               title="tournamentID"
           />
 

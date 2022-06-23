@@ -5,7 +5,7 @@ function getPaticipants(tournamentId) {
 }
 
 async function getGetPaticipants(tournamentId) {
-    const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
+    const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
     let url = `https://api.challonge.com/v1/tournaments/${tournamentId}/participants?api_key=${password}`;
     try {
         await fetch(url, {

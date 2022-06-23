@@ -21,7 +21,7 @@ function createTournament(tournamentName, gameName, description, roundType) {
 }
 
 async function PostCreateTournament(tournament) {
-  const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
+  const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
   try {
     await fetch("https://api.challonge.com/v1/tournaments.json", {
       method: "POST",
