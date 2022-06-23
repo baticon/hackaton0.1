@@ -20,6 +20,13 @@ function ScoreSubmit() {
     console.log(url);
   }
 
+  const [inputTournamentID, setInputTournamentID] = useState("");
+  const handleChangeTournamentID = ({ target }) => {
+    setInputTournamentID(target.value);
+
+    console.log("TournamentID value is:", target.value);
+  };
+
   return (
     <form>
       <div>
@@ -28,9 +35,24 @@ function ScoreSubmit() {
           handleMapClick={handleMapClick}
         ></TournamentsList>
       </div>
-      <input placeholder="tournament ID"></input>
-      <input placeholder="round number"></input>
-      <input placeholder="winner ID"></input>
+      <div>
+        <label style={{ color: "white" }}>Enter tournament ID</label>
+        <input
+          type="text"
+          placeholder="tournament ID"
+          onChange={handleChangeTournamentID}
+          value={inputTournamentID}
+        />
+      </div>
+      <div>
+        <label style={{ color: "white" }}>Enter WINNER player ID</label>
+        <input placeholder="round number"></input>
+      </div>
+      <div>
+        <label style={{ color: "white" }}>Enter LOSER player ID</label>
+        <input placeholder="winner ID"></input>
+      </div>
+
       <button>Submit</button>
     </form>
   );
