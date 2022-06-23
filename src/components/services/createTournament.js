@@ -29,7 +29,7 @@ async function PostCreateTournament(tournament) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ api_key: password, tournament }),
+      body: JSON.stringify({api_key: password, tournament: tournament }),
     });
   } catch (error) {
     console.log(error);
