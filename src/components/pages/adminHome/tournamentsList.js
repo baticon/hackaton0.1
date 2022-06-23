@@ -4,7 +4,10 @@ const TournamentList = (props) => {
       <h1>Tournaments</h1>
       <div>
         {props.tournamentData.map(({ tournament }) => (
-          <div key={tournament.id}>{tournament.name}</div>
+          <div style={{ color: "white" }} key={tournament.id}>
+            ID: {tournament.id} || tournament name: {tournament.name} ||
+            tournament description {tournament.description}
+          </div>
         ))}
       </div>
     </div>

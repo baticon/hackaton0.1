@@ -26,7 +26,7 @@ function App() {
             ]
           : null}
       </Routes>
-      <Snow />
+      {/* <Snow /> */}
     </div>
   );
 }

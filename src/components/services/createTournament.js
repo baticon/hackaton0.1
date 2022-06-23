@@ -1,14 +1,23 @@
-function createTournament(tournamentName) {
-  console.log("test from createTournament");
-  console.log(tournamentName);
-  let tournament = {
-    name: tournamentName,
-    game_name: "gameName",
-    description: "tournamentDescription",
-    tournament_type: "round robin",
-  };
+function createTournament(tournamentName, gameName, description, roundType) {
+  if (
+    tournamentName.length > 0 &&
+    gameName.length > 0 &&
+    description.length > 0 &&
+    roundType.length > 0
+  ) {
+    console.log("test from createTournament");
+    console.log(tournamentName);
+    let tournament = {
+      name: tournamentName,
+      game_name: gameName,
+      description: description,
+      tournament_type: roundType,
+    };
 
-  PostCreateTournament(tournament);
+    PostCreateTournament(tournament);
+  } else {
+    alert("Please fill in all required fields");
+  }
 }
 
 async function PostCreateTournament(tournament) {
