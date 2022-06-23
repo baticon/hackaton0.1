@@ -1,7 +1,7 @@
 function SetMap(urlPart) {
   return (
     <iframe
-      src={`http://challonge.com/8yu1bo44/module`}
+      src={`http://challonge.com/${urlPart}/module`}
       width="100%"
       height="500"
       frameborder="0"
