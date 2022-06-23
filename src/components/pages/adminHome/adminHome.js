@@ -7,6 +7,7 @@ import fetchTournaments from "../../services/tournaments";
 import createTournament from "../../services/createTournament";
 import deleteTournament from "../../services/deleteTournament";
 import startTournament from "../../services/startTournament";
+import getSingleTournament from "../../services/getTournament";
 
 import { useState, useEffect } from "react";
 
@@ -19,6 +20,9 @@ const AdminHome = () => {
     }
     getData();
   }, [data]);
+
+  console.log("test from adminhome");
+  console.log(data);
 
   const [tournamentName, setTournamentName] = useState("");
   const handleChangeTournamentName = ({ target }) => {
@@ -53,9 +57,21 @@ const AdminHome = () => {
     console.log(tournamentStart);
   };
 
+  let singleTournament = "";
   const [tournamentUpdateID, setTournamentUpdateID] = useState("");
+  let [tournamentUpdateName, setTournamentUpdateName] = useState("");
+  const [tournamentUpdateGameName, setTournamentUpdateGameName] = useState("");
+  const [tournamentUpdateDescription, setTournamentUpdateDescription] =
+    useState("");
+
+  const [tournamentUpdateTournamentType, setTournamentUpdateTournamentType] =
+    useState("");
   const handleChangeTournamentUpdateID = ({ target }) => {
     setTournamentUpdateID(target.value);
+    if (tournamentUpdateID.length === 8) {
+      singleTournament = getSingleTournament();
+      tournamentUpdateName = singleTournament.tournament.name;
+    }
     console.log(tournamentUpdateID);
   };
 
@@ -144,8 +160,23 @@ const AdminHome = () => {
             value={tournamentStart}
           ></input>
         </div>
-        <div>
+        <div style={{ display: "flex" }}>
           <button>Update tournament</button>
+          <input
+            placeholder="Enter tournament ID"
+            onChange={handleChangeTournamentUpdateID}
+            value={tournamentUpdateID}
+          ></input>
+          <input
+            placeholder="Enter tournament name"
+            // onChange={handleChangeTournamentUpdateID}
+            value={tournamentUpdateName}
+          ></input>
+          <input
+            placeholder="Enter tournament ID"
+            onChange={handleChangeTournamentUpdateID}
+            value={tournamentUpdateID}
+          ></input>
           <input
             placeholder="Enter tournament ID"
             onChange={handleChangeTournamentUpdateID}
