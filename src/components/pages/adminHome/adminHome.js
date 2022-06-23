@@ -116,7 +116,7 @@ const AdminHome = () => {
   }
 
   return (
-    <div>
+    <div style={{overflowY:"scroll", height:'45em'}}>
       <Header></Header>
       <div>
         <div>
