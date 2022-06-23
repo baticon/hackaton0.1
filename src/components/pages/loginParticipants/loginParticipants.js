@@ -21,6 +21,26 @@ const LoginParticipants = () => {
 
     return (
         <div>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+            <form_reg>
+                <h3>Register Here</h3>
+
+                <label htmlFor="username">Username</label>
+                <input type="text" placeholder="Username" id="username"/>
+
+                <label htmlFor="email">Email</label>
+                <input type="email" placeholder="Email" id="email"/>
+
+                <label htmlFor="tournament_id">Tournament ID</label>
+                <input type="text" placeholder="Tournament ID" id="tournament_id"/>
+                <button>Log In</button>
+            </form_reg>
+
+
+
             <form id="login-form" className={style.loginForm}>
                 <h2>Login</h2>
                 <input
