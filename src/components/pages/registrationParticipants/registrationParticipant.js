@@ -39,10 +39,12 @@ const RegistrationParticipants = () => {
   };
 
   return (
+
     <div className={style.body}>
       <div className={style.background}>
         <div className={style.shape}></div>
         <div className={style.shape}></div>
+
       </div>
       <div className={style.form_reg}>
         <h3>Register Here</h3>
