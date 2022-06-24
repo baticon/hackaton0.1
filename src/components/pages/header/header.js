@@ -24,10 +24,10 @@ const Header = () => {
         <Link className={style.noAccount} to="/scoresubmit">
           Submit your score
         </Link>
-        <Link className={style.noAccount} to="/registrationparticipants">
+        <Link className={style.noAccount} to="/">
           Register for tournament
         </Link>
-        <Link className={style.noAccount} to="/">
+        <Link className={style.noAccount} to="/login">
           Log out
         </Link>
       </header>
@@ -35,7 +35,18 @@ const Header = () => {
         <div className={newsStyle2.heading}>Trending Now</div>
         <ul className={newsStyle2.newstickerv}>
           <li className={newsStyle2.newstickervli}>
+            <a href="google.com">Антиперспирант Roma, порадуй свои подмышки.</a>
+          </li>
+          <li className={newsStyle2.newstickervli}>
             <a href="google.com">Saving private Roma, soon in theathers.</a>
+          </li>
+          <li className={newsStyle2.newstickervli}>
+            <a href="google.com">Roma sharkboy has attacked Alabama.</a>
+          </li>
+          <li className={newsStyle2.newstickervli}>
+            <a href="google.com">
+              Roma pinguins are beocming endagered species.
+            </a>
           </li>
           <li className={newsStyle2.newstickervli}>
             <a href="google.com">The last news item</a>

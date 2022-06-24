@@ -219,6 +219,22 @@ const AdminHome = () => {
             ></input>
 
             {/*  //TODO CONTINUE HERE*/}
+
+            <button
+              className={style.button}
+              onClick={() => {
+                finalizeTournament(tournamentFinalize);
+              }}
+            >
+              Finish tournament
+            </button>
+            <label style={{ color: "white" }}>Tournament ID</label>
+            <input
+              className={style.input}
+              placeholder="Enter tournament ID"
+              onChange={handleChangeTournamentFinalize}
+              value={tournamentFinalize}
+            ></input>
           </div>
           <div className={style.operationContainer}>
             <button

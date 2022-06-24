@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <div>
         <Routes>
-          {/* <Route path="/" element={<Login />} />
-          <Route path="registration" element={<Registration />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="registration" element={<Registration />} />
           <Route path="/" element={<RegistrationParticipants />} />
           {isLoggedIn
             ? [
