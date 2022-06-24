@@ -4,8 +4,9 @@
 
 .tournamentList {
   display: grid;
-  grid-template-columns: 250px 250px 250px;
-  grid-template-rows: 120px auto 80px;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 150px auto 80px;
+  margin: 10px;
   column-gap: 10px;
   row-gap: 15px;
   color: white;
@@ -14,7 +15,8 @@
 .individualTournament {
   padding-left: 5px;
   padding-top: 5px;
-  height: 100px;
+  height: auto;
+  width: auto;
   border-radius: 15px;
   background: #21212b;
   border-color: #ea4335;

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import fetchTournaments from "../../services/tournaments";
 import TournamentsList from "../adminHome/tournamentsList";
 import updateMatch from "../../services/updateMatch";
+import Header from "../header/header";
+import style from "./scoreSubmit.module.css";
 
 function ScoreSubmit() {
   const [data, setData] = useState([]);
@@ -40,48 +42,69 @@ function ScoreSubmit() {
   };
 
   return (
-    <form>
-      <div>
-        <TournamentsList
-          tournamentData={data}
-          handleMapClick={handleMapClick}
-        ></TournamentsList>
-      </div>
-      <div>
-        <label style={{ color: "white" }}>Enter tournament ID</label>
-        <input
-          style={{ color: "white" }}
-          type="text"
-          placeholder="tournament ID"
-          onChange={handleChangeTournamentID}
-        />
-      </div>
-      <div>
-        <label style={{ color: "white" }}>Enter WINNER player ID</label>
-        <input
-          style={{ color: "white" }}
-          placeholder="Winner ID"
-          onChange={handleChangePlayerWinner}
-        ></input>
-      </div>
-      <div>
-        <label style={{ color: "white" }}>Enter LOSER player ID</label>
-        <input
-          style={{ color: "white" }}
-          placeholder="Looser ID"
-          onChange={handleChangePlayerLooser}
-        ></input>
-      </div>
+    <div>
+      <Header></Header>
+      <form>
+        <div>
+          <h2 style={{ marginTop: "50px" }}>Enter match results</h2>
+          <div>
+            <label className={style.label}>Enter tournament ID</label>
+            <input
+              className={style.input}
+              type="text"
+              placeholder="tournament ID"
+              onChange={handleChangeTournamentID}
+            />
+          </div>
+          <div>
+            <label className={style.label}>Enter WINNER player ID</label>
+            <input
+              className={style.input}
+              placeholder="Winner ID"
+              onChange={handleChangePlayerWinner}
+            ></input>
+          </div>
+          <div>
+            <label className={style.label}>Enter LOSER player ID</label>
+            <input
+              className={style.input}
+              placeholder="Looser ID"
+              onChange={handleChangePlayerLooser}
+            ></input>
+          </div>
 
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          updateMatch(inputTournamentID, inputPlayerWinner, inputPlayerLooser);
-        }}
-      >
-        Submit
-      </button>
-    </form>
+          <button
+            className={style.button}
+            style={{ marginBottom: "20px" }}
+            onClick={(e) => {
+              e.preventDefault();
+              updateMatch(
+                inputTournamentID,
+                inputPlayerWinner,
+                inputPlayerLooser
+              );
+            }}
+          >
+            Submit
+          </button>
+        </div>
+        <div>
+          <TournamentsList
+            tournamentData={data}
+            handleMapClick={handleMapClick}
+          ></TournamentsList>
+          <h2>Individual tournament map</h2>
+          <iframe
+            src={`http://challonge.com/${url}/module`}
+            width="100%"
+            height="500"
+            frameborder="0"
+            scrolling="auto"
+            allowtransparency="true"
+          ></iframe>
+        </div>
+      </form>
+    </div>
   );
 }
 

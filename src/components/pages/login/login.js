@@ -1,9 +1,11 @@
 import style from "./login.module.css";
-import Logo from "../../backgrounds/logo";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [inputLogin, setInputLogin] = useState("");
   const [inputPassword, setInputPassword] = useState("");
 
@@ -21,12 +23,15 @@ const Login = () => {
 
   return (
     <div>
-      <form id="login-form" className={style.loginForm}>
-        <h2>Login</h2>
+      <div className={style.background}>
+        <div className={style.shape}></div>
+        <div className={style.shape}></div>
+      </div>
+      <form id="login-form" className={style.form_reg}>
+        <h3>Login</h3>
         <input
           type="text"
           id="login"
-          className={style.inputField}
           placeholder="Login"
           onChange={handleChangeLogin}
           value={inputLogin}
@@ -38,31 +43,42 @@ const Login = () => {
         <input
           type="password"
           id="password"
-          className={style.inputField}
           placeholder="Password"
           onChange={handleChangePassword}
           value={inputPassword}
           pattern="^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}"
           title="Пароль — от 8 до 30 символов, обязательно хотя бы один спецсимвол и цифра."
         />
-        <button id="loginButton" className={style.button}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <button
+          id="loginButton"
+          className={style.button}
+          onClick={() => navigate("/admin")}
+        >
           Login
         </button>
         <button
           onClick={console.log("test")}
           id="loginForgotButton"
           className={style.button}
+          style={{ marginBottom: "50px" }}
         >
           Forgot password
         </button>
-        <Link className={style.noAccount} to="/registration">
+        <Link
+          className={style.button}
+          style={{
+            marginLeft: "100px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
+          to="/registration"
+        >
           No account? Register!
         </Link>
-        {/* <a className={style.noAccount} href="/registration">
-        No account? Register!
-      </a> */}
       </form>
-      <Logo />
     </div>
   );
 };

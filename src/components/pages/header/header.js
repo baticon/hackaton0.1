@@ -11,18 +11,24 @@ const Header = () => {
     <div className={style.navBar}>
       <header className={style.header}>
         <Logo className={style.logo}></Logo>
-        <Link className={style.noAccount} to="/registration">
-          No account? Register!
+        <Link className={style.noAccount} to="/about">
+          About
         </Link>
-        <Link className={style.noAccount} to="/registration">
-          No account? Register!
+        <Link className={style.noAccount} to="/admin">
+          Admin
         </Link>
         <div>
           <div className={style.user}>USER</div>
           <span>User name</span>
         </div>
-        <Link className={style.noAccount} to="/registration">
-          No account? Register!
+        <Link className={style.noAccount} to="/scoresubmit">
+          Submit your score
+        </Link>
+        <Link className={style.noAccount} to="/registrationparticipants">
+          Register for tournament
+        </Link>
+        <Link className={style.noAccount} to="/">
+          Log out
         </Link>
       </header>
       <div className={newsStyle2.tickerwrapperv}>

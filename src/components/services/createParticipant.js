@@ -28,7 +28,8 @@ async function PostCreateParticipant(tournamentID, participant) {
       .then((response) => response.json())
       .then((json) => console.log(json));
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    alert(error);
   }
 }
 

@@ -33,6 +33,8 @@ const TournamentList = (props) => {
             <br></br>
             <span>tournament type {tournament.tournament_type}</span>
             <br></br>
+            <span># of players {tournament.participants_count}</span>
+            <br></br>
             <span>tournament url {tournament.url}</span>
           </div>
         ))}
