@@ -24,6 +24,12 @@ const Header = () => {
         <Link className={style.noAccount} to="/scoresubmit">
           Submit your score
         </Link>
+        <Link className={style.noAccount} to="/registrationparticipants">
+          Register for tournament
+        </Link>
+        <Link className={style.noAccount} to="/">
+          Log out
+        </Link>
       </header>
       <div className={newsStyle2.tickerwrapperv}>
         <div className={newsStyle2.heading}>Trending Now</div>

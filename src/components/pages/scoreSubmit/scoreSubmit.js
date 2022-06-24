@@ -46,6 +46,49 @@ function ScoreSubmit() {
       <Header></Header>
       <form>
         <div>
+          <h2 style={{ marginTop: "50px" }}>Enter match results</h2>
+          <div>
+            <label className={style.label}>Enter tournament ID</label>
+            <input
+              className={style.input}
+              type="text"
+              placeholder="tournament ID"
+              onChange={handleChangeTournamentID}
+            />
+          </div>
+          <div>
+            <label className={style.label}>Enter WINNER player ID</label>
+            <input
+              className={style.input}
+              placeholder="Winner ID"
+              onChange={handleChangePlayerWinner}
+            ></input>
+          </div>
+          <div>
+            <label className={style.label}>Enter LOSER player ID</label>
+            <input
+              className={style.input}
+              placeholder="Looser ID"
+              onChange={handleChangePlayerLooser}
+            ></input>
+          </div>
+
+          <button
+            className={style.button}
+            style={{ marginBottom: "20px" }}
+            onClick={(e) => {
+              e.preventDefault();
+              updateMatch(
+                inputTournamentID,
+                inputPlayerWinner,
+                inputPlayerLooser
+              );
+            }}
+          >
+            Submit
+          </button>
+        </div>
+        <div>
           <TournamentsList
             tournamentData={data}
             handleMapClick={handleMapClick}
@@ -60,47 +103,6 @@ function ScoreSubmit() {
             allowtransparency="true"
           ></iframe>
         </div>
-        <h2 style={{ marginTop: "50px" }}>Enter match results</h2>
-        <div>
-          <label className={style.label}>Enter tournament ID</label>
-          <input
-            className={style.input}
-            type="text"
-            placeholder="tournament ID"
-            onChange={handleChangeTournamentID}
-          />
-        </div>
-        <div>
-          <label className={style.label}>Enter WINNER player ID</label>
-          <input
-            className={style.input}
-            placeholder="Winner ID"
-            onChange={handleChangePlayerWinner}
-          ></input>
-        </div>
-        <div>
-          <label className={style.label}>Enter LOSER player ID</label>
-          <input
-            className={style.input}
-            placeholder="Looser ID"
-            onChange={handleChangePlayerLooser}
-          ></input>
-        </div>
-
-        <button
-          className={style.button}
-          style={{ marginBottom: "20px" }}
-          onClick={(e) => {
-            e.preventDefault();
-            updateMatch(
-              inputTournamentID,
-              inputPlayerWinner,
-              inputPlayerLooser
-            );
-          }}
-        >
-          Submit
-        </button>
       </form>
     </div>
   );

@@ -76,8 +76,10 @@ async function putUpdateMatch(url, match) {
     })
       .then((response) => response.json())
       .then((json) => console.log(json));
+    alert("You have been added");
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 }
 

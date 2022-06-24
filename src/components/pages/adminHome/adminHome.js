@@ -8,6 +8,7 @@ import createTournament from "../../services/createTournament";
 import deleteTournament from "../../services/deleteTournament";
 import startTournament from "../../services/startTournament";
 import updateTournament from "../../services/updateTournament";
+import finalizeTournament from "../../services/finalizeTournament";
 // import Map from "../map/map";
 import style from "./adminHome.module.css";
 
@@ -55,6 +56,12 @@ const AdminHome = () => {
   const handleChangeTournamentStart = ({ target }) => {
     setTournamentStart(target.value);
     console.log(tournamentStart);
+  };
+
+  const [tournamentFinalize, setTournamentFinalize] = useState("");
+  const handleChangeTournamentFinalize = ({ target }) => {
+    setTournamentFinalize(target.value);
+    console.log(tournamentFinalize);
   };
 
   const [tournamentUpdateID, setTournamentUpdateID] = useState("");
@@ -212,21 +219,6 @@ const AdminHome = () => {
             ></input>
 
             {/*  //TODO CONTINUE HERE*/}
-            <button
-              className={style.button}
-              onClick={() => {
-                startTournament(tournamentStart);
-              }}
-            >
-              Start tournament
-            </button>
-            <label style={{ color: "white" }}>Tournament ID</label>
-            <input
-              className={style.input}
-              placeholder="Enter tournament ID"
-              onChange={handleChangeTournamentStart}
-              value={tournamentStart}
-            ></input>
           </div>
           <div className={style.operationContainer}>
             <button

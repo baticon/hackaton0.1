@@ -18,12 +18,9 @@ function App() {
     <div className="App">
       <div>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="registration" element={<Registration />} />
-          <Route
-            path="registrationparticipants"
-            element={<RegistrationParticipants />}
-          />
+          {/* <Route path="/" element={<Login />} />
+          <Route path="registration" element={<Registration />} /> */}
+          <Route path="/" element={<RegistrationParticipants />} />
           {isLoggedIn
             ? [
                 <Route path="/about" element={<About />} />,
@@ -32,7 +29,6 @@ function App() {
               ]
             : null}
         </Routes>
-        {/*<Snow />*/}
       </div>
     </div>
   );

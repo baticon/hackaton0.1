@@ -5,7 +5,7 @@
 .tournamentList {
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
-  grid-template-rows: 120px auto 80px;
+  grid-template-rows: 150px auto 80px;
   margin: 10px;
   column-gap: 10px;
   row-gap: 15px;

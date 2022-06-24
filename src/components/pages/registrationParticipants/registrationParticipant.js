@@ -1,8 +1,22 @@
 import style from "./registrationParticipants.module.css";
 import createParticipant from "../../services/createParticipant";
-import { useState } from "react";
+import fetchTournaments from "../../services/tournaments";
+import ReturnTournamentList from "./returnTournamentList";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationParticipants = () => {
+  const navigate = useNavigate();
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    async function getData() {
+      const res = await fetchTournaments();
+      setData(res);
+    }
+    getData();
+  }, [data]);
+
   const [inputEmail, setInputEmail] = useState("");
   const handleChangeEmail = ({ target }) => {
     setInputEmail(target.value);
@@ -69,60 +83,16 @@ const RegistrationParticipants = () => {
         >
           Register
         </button>
+        <button
+          className={style.button}
+          type="submit"
+          onClick={() => navigate("/scoresubmit")}
+        >
+          Back to mainpage
+        </button>
       </div>
 
-      <div className={style.form_tournament_started}>
-        <h3>Tournaments started</h3>
-        <div className={style.container}>
-          <table>
-            <thead>
-              <tr>
-                <th>Tournament ID</th>
-                <th>Game</th>
-                <th>Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cell 1</td>
-                <td>Cell 2</td>
-                <td>Cell 3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div className={style.form_tournament_will_start}>
-        <h3>Tournaments Soon</h3>
-        <div className={style.container}>
-          <table>
-            <thead>
-              <tr>
-                <th>Tournament ID</th>
-                <th>Game</th>
-                <th>Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cell 1</td>
-                <td>Cell 2</td>
-                <td>Cell 3</td>
-              </tr>
-              <tr>
-                <td>Cell 1</td>
-                <td>Cell 2</td>
-                <td>Cell 3</td>
-              </tr>
-              <tr>
-                <td>Cell 1</td>
-                <td>Cell 2</td>
-                <td>Cell 3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ReturnTournamentList tournamentData={data}></ReturnTournamentList>
     </div>
   );
 };

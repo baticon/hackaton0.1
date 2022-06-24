@@ -1,8 +1,11 @@
 import style from "./login.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [inputLogin, setInputLogin] = useState("");
   const [inputPassword, setInputPassword] = useState("");
 
@@ -49,7 +52,11 @@ const Login = () => {
         <br></br>
         <br></br>
         <br></br>
-        <button id="loginButton" className={style.button}>
+        <button
+          id="loginButton"
+          className={style.button}
+          onClick={() => navigate("/admin")}
+        >
           Login
         </button>
         <button
