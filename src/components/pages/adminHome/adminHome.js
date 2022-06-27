@@ -97,26 +97,12 @@ const AdminHome = () => {
   // const [map, setMap] = useState();
   const [url, setUrl] = useState("");
 
-  // function SetMap(urlPart) {
-  //   return (
-  //     <iframe
-  //       src={`http://challonge.com/${urlPart}/module`}
-  //       width="100%"
-  //       height="500"
-  //       frameborder="0"
-  //       scrolling="auto"
-  //       allowtransparency="true"
-  //     ></iframe>
-  //   );
-  // }
-
   function handleMapClick(url) {
     setUrl(url);
   }
 
   return (
     <div className={style.body}>
-    //<div style={{overflowY:"scroll", height:'45em'}}>
       <Header></Header>
       <div>
         <div className={style.form}>
