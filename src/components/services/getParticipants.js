@@ -41,8 +41,6 @@ async function getParticipants(id) {
         "Content-Type": "application/json",
       },
     });
-    // .then((response) => response.json())
-    // .then((responseJSON) => {console.log(responseJSON)});
     const data = await res.json();
     return data;
   } catch (error) {

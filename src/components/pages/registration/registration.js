@@ -5,43 +5,31 @@ const Registration = () => {
   const [inputEmail, setInputEmail] = useState("");
   const handleChangeEmail = (event) => {
     setInputEmail(event.target.value);
-
-    console.log("Email value is:", event.target.value);
   };
 
   const [inputLogin, setInputLogin] = useState("");
   const handleChangeLogin = (event) => {
     setInputLogin(event.target.value);
-
-    console.log("Login value is:", event.target.value);
   };
 
   const [inputName, setInputName] = useState("");
   const handleChangeName = (event) => {
     setInputName(event.target.value);
-
-    console.log("Name value is:", event.target.value);
   };
 
   const [inputSurname, setInputSurname] = useState("");
   const handleChangeSurname = (event) => {
     setInputSurname(event.target.value);
-
-    console.log("Surname value is:", event.target.value);
   };
 
   const [inputPhone, setInputPhone] = useState("");
   const handleChangePhone = (event) => {
     setInputPhone(event.target.value);
-
-    console.log("Phone value is:", event.target.value);
   };
 
   const [inputPassword, setInputPassword] = useState("");
   const handleChangePassword = (event) => {
     setInputPassword(event.target.value);
-
-    console.log("Password value is:", event.target.value);
   };
 
   return (

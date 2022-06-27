@@ -1,8 +1,6 @@
 import key from "../pages/adminHome/key";
 
 function getPaticipants(tournamentId, participantID) {
-  console.log("test from deleteTournament");
-  console.log(tournamentId);
   getGetPaticipants(tournamentId, participantID);
 }
 

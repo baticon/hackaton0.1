@@ -1,9 +1,6 @@
 import key from "../pages/adminHome/key";
 
 function startTournament(tournamentId) {
-  console.log("test from deleteTournament");
-  console.log(tournamentId);
-  //const tournamentId = "11325077";
   postStartTournament(tournamentId);
 }
 

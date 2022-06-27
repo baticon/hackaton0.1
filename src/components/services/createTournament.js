@@ -7,8 +7,6 @@ function createTournament(tournamentName, gameName, description, roundType) {
     description.length > 0 &&
     roundType.length > 0
   ) {
-    console.log("test from createTournament");
-    console.log(tournamentName);
     let tournament = {
       name: tournamentName,
       game_name: gameName,
