@@ -3,7 +3,6 @@ const username = "testtes";
 const password = "4aiMNGFnXRnKwIQfzeQWlMc3AJl1fAQ7FJOGIsF2";
 let url = "https://api.challonge.com/v1/tournaments.json";
 
-//headers.append('Content-Type', 'text/json');
 headers.set("Authorization", "Basic " + btoa(`${username}:${password}`));
 
 async function fetchTournaments() {

@@ -11,14 +11,10 @@ const Login = () => {
 
   const handleChangeLogin = (event) => {
     setInputLogin(event.target.value);
-
-    console.log("Login value is:", event.target.value);
   };
 
   const handleChangePassword = (event) => {
     setInputPassword(event.target.value);
-
-    console.log("Password value is:", event.target.value);
   };
 
   return (
@@ -60,7 +56,6 @@ const Login = () => {
           Login
         </button>
         <button
-          onClick={console.log("test")}
           id="loginForgotButton"
           className={style.button}
           style={{ marginBottom: "50px" }}

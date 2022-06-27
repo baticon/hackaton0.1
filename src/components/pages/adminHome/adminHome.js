@@ -38,13 +38,11 @@ const AdminHome = () => {
   const [description, setDescription] = useState("");
   const handleChangeDescription = ({ target }) => {
     setDescription(target.value);
-    console.log(description);
   };
 
   const [roundType, setRoundType] = useState("");
   const handleChangeRoundType = ({ target }) => {
     setRoundType(target.value);
-    console.log(roundType);
   };
 
   const [tournamentDeleteName, setTournamentDeleteName] = useState("");
@@ -55,13 +53,11 @@ const AdminHome = () => {
   const [tournamentStart, setTournamentStart] = useState("");
   const handleChangeTournamentStart = ({ target }) => {
     setTournamentStart(target.value);
-    console.log(tournamentStart);
   };
 
   const [tournamentFinalize, setTournamentFinalize] = useState("");
   const handleChangeTournamentFinalize = ({ target }) => {
     setTournamentFinalize(target.value);
-    console.log(tournamentFinalize);
   };
 
   const [tournamentUpdateID, setTournamentUpdateID] = useState("");
@@ -75,8 +71,6 @@ const AdminHome = () => {
 
   const handleChangeTournamentUpdateID = ({ target }) => {
     const id = Number(target.value);
-    console.log("test from adminhome");
-    console.log(data);
     const tournament = data.find(({ tournament }) => {
       return tournament.id === id;
     });
@@ -85,8 +79,6 @@ const AdminHome = () => {
     setTournamentUpdateGameName(tournament.tournament.game_name);
     setTournamentUpdateDescription(tournament.tournament.description);
     setTournamentUpdateTournamentType(tournament.tournament.tournament_type);
-    console.log("test");
-    console.log(tournament);
   };
 
   const handleChangeTournamentUpdateName = ({ target }) => {
@@ -120,7 +112,6 @@ const AdminHome = () => {
 
   function handleMapClick(url) {
     setUrl(url);
-    console.log(url);
   }
 
   return (

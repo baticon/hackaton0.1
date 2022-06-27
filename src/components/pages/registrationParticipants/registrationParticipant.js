@@ -20,22 +20,16 @@ const RegistrationParticipants = () => {
   const [inputEmail, setInputEmail] = useState("");
   const handleChangeEmail = ({ target }) => {
     setInputEmail(target.value);
-
-    console.log("Email value is:", target.value);
   };
 
   const [inputLogin, setInputLogin] = useState("");
   const handleChangeLogin = ({ target }) => {
     setInputLogin(target.value);
-
-    console.log("Login value is:", target.value);
   };
 
   const [inputTournamentID, setInputTournamentID] = useState("");
   const handleChangeTournamentID = ({ target }) => {
     setInputTournamentID(target.value);
-
-    console.log("TournamentID value is:", target.value);
   };
 
   return (

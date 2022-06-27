@@ -1,13 +1,5 @@
 import key from "../pages/adminHome/key";
 
-// function getSingleTournament(id) {
-//   const password = "5ttmG805ZCDDuoVWdwasaBjsFejkrt0wR5gdtlxU";
-//   const tournamentId = id;
-
-//   let url = `https://api.challonge.com/v1/tournaments/${tournamentId}?api_key=${password}`;
-//   getTournament(url);
-// }
-
 async function getTournament(id) {
   const password = key;
   const tournamentId = id;
